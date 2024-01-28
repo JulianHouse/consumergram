@@ -1,0 +1,2 @@
+docker pull mysql:latest
+docker run --name consumergram -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=consumergram -e MYSQL_USER=admin -e MYSQL_PASSWORD=password123 -p 3306:3306 -d mysql:latest

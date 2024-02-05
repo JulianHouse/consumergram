@@ -3,9 +3,7 @@ package org.example.consumergram.controller;
 import org.example.consumergram.model.Consumer;
 import org.example.consumergram.repository.ConsumerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -25,7 +23,13 @@ public class RegisterController {
         return consumerRepository.findById(id);
     }
 
+    @PostMapping("/consumers")
+    public Consumer createUser(@RequestBody Consumer consumer) {
+        System.out.println(consumer);
+        return consumerRepository.save(consumer);
     }
+
+}
 
 
 
